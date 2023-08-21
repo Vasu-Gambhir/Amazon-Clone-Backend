@@ -10,15 +10,18 @@ const router = require("./routes/route.js");
 const cookieParser = require("cookie-parser");
 
 app.use(express.json());
+app.use(cookieParser(""));
 
+// app.use(cors());
 app.use(
   cors({
     origin: ["http://localhost:3000", "https://amazon-clone-vg.netlify.app"],
     credentials: true,
   })
 );
+
 // app.options("*", cors());
-app.use(cookieParser(""));
+
 app.use(router);
 
 const port = process.env.PORT || 8005;
