@@ -17,7 +17,7 @@ app.use(
   cors({
     origin: ["http://localhost:3000", "https://amazon-clone-vg.netlify.app"],
     credentials: true,
-    exposedHeaders: ["set-cookie"],
+    // exposedHeaders: ["set-cookie"],
   })
 );
 
