@@ -89,6 +89,8 @@ router.post("/login", async (req, res) => {
         res.cookie("AmazonClone", token, {
           expires: new Date(Date.now() + 900000),
           httpOnly: true,
+          secure: true,
+          sameSite: "none",
         });
         res.status(201).json({ userLogin });
       }
